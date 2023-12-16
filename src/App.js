@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+// import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Detect from "./components/Detect";
+// import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Signup from "./components/Signup";
+// import Profile from "./components/Profile";
+// import Errorpage from "./components/Errorpage";
+// import Testpatterns from "./components/Testpatterns";
+// import TestPatternAdd from "./components/TestPatternAdd";
+// import TestPatternsDisplay from "./components/TestPatternsDisplay";
+// import Company from "./components/Company";
+// import About from "./components/About";
+// import Contact from './components/Contact'
+// import CompanyStudent from './components/CompanyStudent';
+// import AdminDashboard from "./components/AdminDashboard";
+// import StudentDashboard from "./components/StudentDashboard";
+// import MockTestVerbal from "./components/MockTestVerbal";
+// import MockTestQuant from "./components/MockTestQuant";
+// import MockTestTech from "./components/MockTestTech";
+// import Email from "./components/Email";
+// import Gdrules from "./components/Gdrules";
+// import New from "./components/New";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      {/* <Navbar /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+         <Route path="/detect" element={<Detect />} />
+          {/* <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/email" element={<Email />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gd" element={<Gdrules />} />
+          <Route path="/mocktestverbal" element={<MockTestVerbal />} />
+          <Route path="/mocktestquant" element={<MockTestQuant />} />
+          <Route path="/mocktesttech" element={<MockTestTech />} />
+          <Route path="/dashboard/student/testpatterns/:id" element={<CompanyStudent />} />
+          <Route path="/mocktestverbal" element={<MockTestVerbal />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
+          <Route path="/dashboard/student" element={<StudentDashboard />} />
+          <Route path="/dashboard/student/testpatterns" element={<Testpatterns />} />
+          <Route path="/admin/testpatternsadd" element={<TestPatternAdd />} />
+          <Route path="/admin/testpatternsdisplay" element={<TestPatternsDisplay />} />
+          <Route path="/admin/testpatternsdisplay/:id" element={<Company />} /> */}
+
+          {/* <Route path="*" element={<Errorpage />} /> */}
+
+        </Routes>
+        {/* <Footer /> */}
+      </BrowserRouter>
     </div>
   );
 }
