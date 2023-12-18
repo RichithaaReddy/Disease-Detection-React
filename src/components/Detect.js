@@ -1,45 +1,9 @@
 import React, { useState } from 'react';
-import { CloudinaryConfig } from '../CloudinaryConfig';
 
 const Detect = () => {
-  const [imageSrc, setImageSrc] = useState();
-  const [uploadData, setUploadData] = useState();
-
-  async function handleOnChange(changeEvent) {
-    const reader = new FileReader();
-
-    reader.onload = function (onLoadEvent) {
-      setImageSrc(onLoadEvent.target.result);
-      setUploadData(undefined);
-    };
-
-    reader.readAsDataURL(changeEvent.target.files[0]);
-  }
-
-  async function handleOnSubmit(event) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const fileInput = Array.from(form.elements).find(({ name }) => name === 'file');
-
-    const formData = new FormData();
-
-    for (const file of fileInput.files) {
-      formData.append('file', file);
-    }
-
-    // Replace 'your_upload_preset' and 'your_cloud_name' with your actual values
-    formData.append('upload_preset', 'crdn1upu');
-
-    const data = await fetch(`https://api.cloudinary.com/v1_1/your_cloud_name/image/upload`, {
-      method: 'POST',
-      body: formData,
-    }).then((r) => r.json());
-
-    setImageSrc(data.secure_url);
-    setUploadData(data);
-    console.log('data', data);
-  }
-
+const uploadImage = (files) =>{
+ console.log(files[0]);
+}
   return (
     <>
       <header className="py-4 text-white bg-zinc-950 text-center">
@@ -83,7 +47,9 @@ const Detect = () => {
                 type="file"
                 accept=".jpeg, .jpg"
                 className="hidden"
-                onChange={handleOnChange}
+                onChange={(event)=>{
+                  uploadImage(event.target.files);
+                }}
               />
             </div>
 
@@ -92,11 +58,7 @@ const Detect = () => {
             </div>
           </div>
 
-          {imageSrc && (
-            <div className="text-center">
-              <img src={imageSrc} alt="Uploaded" className="mx-auto max-h-[300px]" />
-            </div>
-          )}
+        
         </div>
       </div>
     </>
