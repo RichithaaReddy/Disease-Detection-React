@@ -8,7 +8,7 @@ const uploadImage = (files) =>{
     <>
       <header className="py-4 text-white bg-zinc-950 text-center">
         <h1 className="text-4xl tracking-wider font-extrabold p-3 font-serif mb-1">
-          Pomegranate Diagnosis
+          Pomegranate Diagnosis 
         </h1>
         <p className="text-md tracking-wider text-gray-500">
           Advancing Pomegranate Health Through Precision Diagnosis
