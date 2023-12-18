@@ -8,9 +8,9 @@ import { CloudinaryContextProvider } from './CloudinaryConfig';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CloudinaryContextProvider>
+    // <CloudinaryContextProvider>
       <App />
-    </CloudinaryContextProvider>
+    // </CloudinaryContextProvider>
   </React.StrictMode>
 );
 
